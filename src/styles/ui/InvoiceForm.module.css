@@ -1,0 +1,269 @@
+.container {
+  height: calc(100dvh - 6rem);
+  width: 40%;
+  background-color: var(--color-grey-900);
+
+  position: absolute;
+  border-radius: 1rem;
+
+  left: -65rem;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.5s;
+}
+
+.open {
+  left: 17rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.form {
+  padding: 4rem 5rem;
+}
+
+.form h1 {
+  letter-spacing: 0.15rem;
+  color: var(--color-grey-300);
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+.form h5 {
+  letter-spacing: 0.1rem;
+  color: var(--color-violet-500);
+}
+
+.formContainer {
+  overflow-y: auto;
+  height: 47rem;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--color-grey-600);
+}
+
+.billFrom,
+.billTo,
+.additionalInfo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.5rem;
+  column-gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.additionalInfo {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.layout {
+  grid-column: 1 / -1;
+}
+
+.billFrom label,
+.billTo label,
+.additionalInfo label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--color-grey-500);
+  letter-spacing: 0.15rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.billFrom input,
+.billTo input,
+.additionalInfo input,
+.additionalInfo select {
+  width: 100%;
+  margin-top: 0.5rem;
+  height: 4rem;
+  background-color: var(--color-grey-800);
+  border: 1px solid var(--color-grey-600);
+  padding: 0 1rem 0 1.5rem;
+  border-radius: 0.5rem;
+  color: var(--color-grey-400);
+  font-size: 1.3rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+.buttons div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.draft {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  color: var(--color-grey-400);
+  font-weight: 900;
+}
+
+input[id='draft'] {
+  height: 1.4rem;
+  width: 1.4rem;
+  accent-color: var(--color-violet-900);
+}
+
+.submit,
+.cancel {
+  padding: 0.7rem 3rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.cancel {
+  color: var(--color-grey-300);
+  background-color: transparent;
+  border: 1px solid var(--color-violet-500);
+}
+
+.cancel:hover {
+  border: 1px solid var(--color-violet-900);
+}
+
+.submit {
+  color: #e5e7eb;
+  background-color: var(--color-violet-600);
+  border: 1px solid var(--color-violet-600);
+}
+
+.submit:hover {
+  background-color: var(--color-violet-900);
+  border: 1px solid var(--color-violet-900);
+}
+
+.default {
+  display: none;
+}
+
+.additionalInfo select {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.additionalInfo select option {
+  font-size: 1.2rem;
+}
+
+.itemsList h5 {
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+  color: var(--color-violet-500);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.item span {
+  line-height: 0;
+  color: var(--color-grey-400);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.item span:hover {
+  color: var(--color-red);
+}
+
+input[id='itemName'],
+input[id='quantity'],
+input[id='price'] {
+  height: 4rem;
+  background-color: var(--color-grey-800);
+  padding: 0 1rem 0 1.5rem;
+  border-radius: 0.5rem;
+  color: var(--color-grey-400);
+  font-size: 1.3rem;
+  border: 1px solid var(--color-grey-600);
+}
+
+input[id='itemName'] {
+  flex: 1;
+}
+
+input[id='quantity'] {
+  width: 5rem;
+  text-align: center;
+  padding: 0;
+}
+
+input[id='price'] {
+  width: 10rem;
+}
+
+.newItem {
+  width: 100%;
+  margin: 0.5rem 0 3rem 0;
+  background-color: var(--color-grey-800);
+  border: none;
+  border-radius: 50rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-grey-400);
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.newItem:hover {
+  background-color: var(--color-violet-500);
+  color: #f3f4f6;
+}
+
+.newItem span {
+  line-height: 0;
+  font-size: 1.1rem;
+}
+
+.labels {
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-grey-500);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.itemLabel {
+  flex: 1;
+}
+
+.quantityLabel {
+  width: 5.9rem;
+}
+
+.priceLabel {
+  width: 12.9rem;
+}
+
+.error {
+  color: var(--color-red);
+  font-size: 0.8rem;
+}

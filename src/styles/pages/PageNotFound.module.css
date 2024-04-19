@@ -1,0 +1,33 @@
+.container {
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+
+  padding: 3rem 2rem;
+  background-color: var(--color-grey-800);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.main img {
+  height: 35rem;
+  border-right: 2px solid var(--color-grey-500);
+  padding-right: 8rem;
+}
+
+.main h1 {
+  font-size: 6rem;
+  color: var(--color-grey-400);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.main button {
+  margin-top: 2.5rem;
+}

@@ -1,0 +1,126 @@
+.container {
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+
+  padding: 3rem 2rem;
+  background-color: var(--color-grey-800);
+}
+
+.main {
+  margin-top: 3rem;
+}
+
+.main > button {
+  margin-left: 22rem;
+}
+
+.main h1 {
+  color: var(--color-grey-300);
+  letter-spacing: 0.15rem;
+}
+
+.main > div {
+  width: 90rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.managePassword,
+.managePersonalInfo {
+  background-color: var(--color-grey-700);
+  padding: 3.5rem 4rem 2.5rem 4rem;
+  border-radius: 1rem;
+}
+
+.managePassword h3,
+.managePersonalInfo h3 {
+  color: var(--color-grey-400);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 1.6rem;
+}
+
+.managePassword .inputsContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.managePassword label,
+.managePersonalInfo label {
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.15rem;
+  color: var(--color-grey-400);
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.managePassword label span,
+.managePersonalInfo label span {
+  font-size: 0.8rem;
+  color: var(--color-red);
+}
+
+.managePassword input,
+.managePersonalInfo input {
+  height: 4rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: var(--color-grey-800);
+  border: 1px solid var(--color-grey-600);
+  border-radius: 0.5rem;
+  padding-left: 4rem;
+  font-size: 1.4rem;
+  color: var(--color-grey-300);
+}
+
+.managePassword button,
+.managePersonalInfo button {
+  float: right;
+  margin-top: 1rem;
+}
+
+.password,
+.confirmPassword,
+.firstName,
+.lastName,
+.email {
+  position: relative;
+  flex: 1;
+}
+
+.confirmPassword input::placeholder,
+.password input::placeholder {
+  letter-spacing: 0.05rem;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 3.6rem;
+  left: 1.5rem;
+  color: var(--color-grey-500);
+  z-index: 1000;
+}
+
+.inputsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.email input {
+  background-color: var(--color-grey-700);
+  border: 1px solid var(--color-grey-500);
+  color: var(--color-grey-400);
+}

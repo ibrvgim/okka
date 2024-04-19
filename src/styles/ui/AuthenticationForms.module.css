@@ -1,0 +1,165 @@
+.container {
+  height: calc(100dvh - 6rem);
+  width: 40%;
+  background-color: var(--color-grey-900);
+
+  position: absolute;
+  border-radius: 1rem;
+
+  left: -65rem;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.5s;
+}
+
+.iconClose {
+  float: right;
+  margin: 3rem;
+  font-size: 3.5rem;
+  color: var(--color-grey-500);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  line-height: 0;
+  transition: all 0.4s;
+}
+
+.iconClose:hover {
+  color: var(--color-violet-400);
+}
+
+.open {
+  left: 17rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.form {
+  padding: 4rem 5rem;
+}
+
+.form h1 {
+  letter-spacing: 0.15rem;
+  color: var(--color-grey-300);
+  margin-top: 4rem;
+}
+
+.inputsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+  column-gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.inputsContainer input {
+  height: 4rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  background-color: var(--color-grey-800);
+  border: 1px solid var(--color-grey-600);
+  border-radius: 0.5rem;
+  padding-left: 4rem;
+  font-size: 1.4rem;
+  color: var(--color-grey-300);
+}
+
+.inputsContainer input::placeholder {
+  color: var(--color-grey-500);
+}
+
+.inputsContainer label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--color-grey-400);
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputsContainer label span {
+  color: var(--color-red);
+  font-size: 0.9rem;
+}
+
+.email,
+.password {
+  grid-column: 1/-1;
+}
+
+.email,
+.name,
+.surname,
+.password {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 3.5rem;
+  left: 1.5rem;
+  color: var(--color-grey-500);
+  z-index: 1000;
+}
+
+.alreadyExist {
+  margin-top: 3rem;
+  color: var(--color-grey-500);
+  font-size: 1.3rem;
+  text-align: center;
+  letter-spacing: 0.05rem;
+}
+
+.alreadyExist button {
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--color-violet-400);
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.alreadyExist button:hover {
+  color: var(--color-violet-700);
+}
+
+.button {
+  float: right;
+  margin-top: 3rem;
+}
+
+.registrationImage {
+  height: 18rem;
+}
+
+.loginImage {
+  height: 20rem;
+  margin-top: 6rem;
+}
+
+.eye {
+  position: absolute;
+  top: 2.9rem;
+  right: 0.5rem;
+  z-index: 1000;
+
+  background-color: var(--color-grey-700);
+  color: var(--color-grey-300);
+  line-height: 0;
+  border: 1px solid var(--color-grey-500);
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.eye:hover {
+  background-color: var(--color-grey-600);
+  color: var(--color-grey-100);
+}

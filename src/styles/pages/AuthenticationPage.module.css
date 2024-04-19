@@ -1,0 +1,75 @@
+.container {
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+
+  padding: 3rem 2rem;
+  background-color: var(--color-grey-800);
+}
+
+.container nav button:last-child {
+  margin: 1.5rem 0 4rem 0;
+}
+
+.container nav button:not(:last-child) {
+  margin-top: 3rem;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.intro h1 {
+  font-size: 5rem;
+  width: 50rem;
+}
+
+.intro h1 span {
+  color: var(--color-violet-500);
+}
+
+.intro > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.intro div button {
+  padding: 1.2rem 3.8rem;
+}
+
+.register {
+  height: 35rem;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.loader {
+  width: 30rem;
+  height: 14px;
+  border-radius: 50rem;
+  color: var(--color-violet-500);
+  background: radial-gradient(
+      circle 10px at right 7px top 50%,
+      #0000 92%,
+      currentColor
+    ),
+    radial-gradient(circle 10px at right 0 top 50%, currentColor 92%, #0000);
+  background-size: calc(100% / 3) 100%;
+  background-position: 50% 0%;
+  animation: l5 1s infinite linear;
+}
+@keyframes l5 {
+  100% {
+    background-position: 0% 0%;
+  }
+}

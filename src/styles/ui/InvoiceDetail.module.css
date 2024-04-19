@@ -1,0 +1,179 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 7rem 0;
+}
+
+.miniNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.miniNav h3 {
+  letter-spacing: 0.15rem;
+  color: var(--color-grey-300);
+  font-size: 2.3rem;
+}
+
+.miniNav h3 span {
+  color: var(--color-violet-600);
+}
+
+.miniNav > div {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.miniNav > div p {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-left: auto;
+  color: var(--color-grey-400);
+  font-weight: 900;
+  margin-top: 0.3rem;
+  letter-spacing: 0.1rem;
+}
+
+.header {
+  min-width: 90rem;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: var(--color-grey-900);
+  padding: 4rem;
+  border-radius: 1rem;
+  margin-top: 4rem;
+}
+
+.header div {
+  display: flex;
+  gap: 1rem;
+}
+
+.body {
+  background-color: var(--color-grey-900);
+  padding: 4rem;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+}
+
+.body > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 1.3rem;
+  color: var(--color-grey-300);
+  width: 55rem;
+  letter-spacing: 0.05rem;
+}
+
+.description span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--color-grey-400);
+}
+
+.address {
+  color: var(--color-grey-400);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recieverInfo {
+  margin-top: 6rem;
+}
+
+.recieverInfo > div h5 {
+  color: var(--color-violet-500);
+  margin-bottom: 1.5rem;
+}
+
+.recieverInfo p {
+  color: var(--color-grey-400);
+  font-size: 1.3rem;
+}
+
+.recieverInfo p:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.recieverInfo h3 {
+  color: var(--color-grey-300);
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.07rem;
+}
+
+.prices {
+  margin-top: 8rem;
+  background-color: var(--color-grey-800);
+  padding: 4rem 4rem 7rem 4rem;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heading,
+.items {
+  width: 100%;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.03rem;
+}
+
+.heading {
+  color: var(--color-violet-500);
+  margin-bottom: 1.5rem;
+}
+
+.items {
+  color: var(--color-grey-300);
+}
+
+.name {
+  flex: 3;
+}
+
+.quantity {
+  flex: 1;
+}
+
+.price {
+  flex: 1;
+}
+
+.total {
+  flex: 1;
+}
+
+.totalAmount {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  background-color: #111;
+  padding: 3rem 4rem;
+  border-radius: 0 0 1rem 1rem;
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #d1d5db;
+  margin-top: -2.5rem;
+}

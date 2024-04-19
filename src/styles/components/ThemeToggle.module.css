@@ -1,0 +1,16 @@
+.theme {
+  background-color: transparent;
+  color: var(--color-grey-500);
+  border: none;
+  font-size: 2.6rem;
+  line-height: 0;
+  padding: 1.2rem;
+  border-radius: 50rem;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.theme:hover {
+  background-color: var(--color-grey-800);
+  color: var(--color-violet-700);
+}

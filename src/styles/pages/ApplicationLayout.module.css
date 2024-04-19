@@ -1,0 +1,9 @@
+.container {
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+
+  padding: 3rem 2rem;
+  background-color: var(--color-grey-800);
+}

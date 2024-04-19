@@ -1,0 +1,33 @@
+.container {
+  margin-top: 9rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7rem;
+}
+
+.container img {
+  height: 30rem;
+}
+
+.container div {
+  flex: 0.6;
+}
+
+.container h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: var(--color-grey-300);
+}
+
+.container > div span {
+  color: var(--color-grey-500);
+  font-size: 8rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.container > div span:hover {
+  color: var(--color-violet-500);
+}

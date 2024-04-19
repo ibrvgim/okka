@@ -1,0 +1,100 @@
+.container {
+  position: relative;
+}
+
+.profile {
+  margin: 2.5rem 0 1.5rem 0;
+  border-top: 3px solid var(--color-grey-700);
+  line-height: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.profile:focus {
+  outline: none;
+}
+
+.profile img {
+  height: 6rem;
+  width: 6rem;
+  border: 2px dashed transparent;
+  border-radius: 500rem;
+  padding: 4px;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.profile img:hover {
+  border: 2px dashed var(--color-violet-700);
+}
+
+.miniMenu {
+  width: 17rem;
+  height: 10rem;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  position: absolute;
+  top: 2rem;
+  left: 11rem;
+  background-color: var(--color-grey-900);
+  border-radius: 1rem;
+}
+
+.miniMenu a:link,
+.miniMenu a:visited {
+  color: var(--color-grey-400);
+  cursor: pointer;
+  height: 3rem;
+  width: 13.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  letter-spacing: 0.05rem;
+  font-weight: 900;
+}
+
+.miniMenu a:active,
+.miniMenu a:hover {
+  background-color: var(--color-grey-700);
+  color: var(--color-violet-400);
+}
+
+.miniMenu button {
+  height: 3rem;
+  width: 13.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--color-grey-400);
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+  font-weight: 900;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.miniMenu button:hover {
+  color: var(--color-violet-400);
+  background-color: var(--color-grey-700);
+  border-radius: 0.5rem;
+}
+
+.miniMenu span {
+  line-height: 0;
+}
+
+.open {
+  display: flex;
+}
+
+:global(.active) {
+  background-color: var(--color-grey-700);
+}
