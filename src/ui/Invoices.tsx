@@ -5,7 +5,7 @@ import InvoiceHeading from './InvoiceHeading';
 import { useToggleWindow } from '../contexts/FormWindowContext';
 import EmptyInvoices from './EmptyInvoices';
 import Button from '../components/Button';
-import { Context, InvoiceItems } from '../types/types';
+import { Context, InvoiceItems, PriceItems } from '../types/types';
 import useGetUser from '../hooks/user/useGetUser';
 import { useEffect, useState } from 'react';
 import { useCreateInvoice } from '../hooks/invoices/useCreateInvoice';
@@ -18,6 +18,7 @@ interface Item {
   clientName: string;
   status: string;
   paymentTerms: number;
+  itemList: PriceItems[];
 }
 
 function Invoices() {
@@ -140,6 +141,7 @@ function Invoices() {
               clientName={invoice.clientName}
               status={invoice.status}
               term={invoice.paymentTerms}
+              itemList={invoice.itemList}
             />
           ))}
         </div>

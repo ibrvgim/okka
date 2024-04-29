@@ -3,7 +3,7 @@ import { useToggleWindow } from '../contexts/FormWindowContext';
 import { FiPlusCircle } from 'react-icons/fi';
 import { MdDelete } from 'react-icons/md';
 import { Context, InvoiceItems } from '../types/types';
-import { useForm } from 'react-hook-form';
+import { useFieldArray, useForm } from 'react-hook-form';
 import { useUpdateInvoice } from '../hooks/invoices/useUpdateInvoice';
 import useGetUser from '../hooks/user/useGetUser';
 import { useEffect, useState } from 'react';
@@ -13,10 +13,15 @@ import MiniSpinner from '../components/MiniSpinner';
 
 function InvoiceForm() {
   const { toggle, handleToggle }: Context = useToggleWindow();
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, formState, reset, control } = useForm();
   const { updateInvoiceData, isProcessing } = useUpdateInvoice();
   const { user } = useGetUser();
   const { getInvoice } = useGetInvoice();
+
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'itemList',
+  });
 
   const { errors } = formState;
 
@@ -44,6 +49,8 @@ function InvoiceForm() {
   }
 
   function onSubmit(data: InvoiceItems) {
+    console.log(data);
+
     const status = data.draft ? 'draft' : 'pending';
 
     setInvoices((invoice) => [
@@ -54,6 +61,9 @@ function InvoiceForm() {
       id,
       invoices: [{ ...data, id: generateID(), status }, ...invoices],
     });
+
+    handleToggle?.();
+    reset();
   }
 
   return (
@@ -362,36 +372,57 @@ function InvoiceForm() {
                 <p className={styles.priceLabel}>Price</p>
               </div>
 
-              <div className={styles.item}>
-                <input
-                  id='itemName'
-                  type='text'
-                  placeholder='ex. User Desktop Design'
-                />
-                <input id='quantity' type='text' defaultValue={1} />
-                <input id='price' type='text' placeholder='ex. 400' />
+              {fields.map((item, index) => {
+                return (
+                  <div className={styles.item} key={item.id}>
+                    <input
+                      id='itemName'
+                      type='text'
+                      placeholder='ex. User Desktop Design'
+                      {...register(`itemList.${index}.itemName`, {
+                        required: true,
+                      })}
+                    />
+                    <input
+                      id='quantity'
+                      type='text'
+                      defaultValue={1}
+                      {...register(`itemList.${index}.itemQuantity`, {
+                        required: true,
+                        valueAsNumber: true,
+                      })}
+                    />
+                    <input
+                      id='price'
+                      type='text'
+                      placeholder='ex. 400'
+                      {...register(`itemList.${index}.itemPrice`, {
+                        required: true,
+                        valueAsNumber: true,
+                      })}
+                    />
 
-                <span>
-                  <MdDelete />
-                </span>
-              </div>
-
-              <div className={styles.item}>
-                <input
-                  id='itemName'
-                  type='text'
-                  placeholder='ex. User Desktop Design'
-                />
-                <input id='quantity' type='text' defaultValue={1} />
-                <input id='price' type='text' placeholder='ex. 400' />
-
-                <span>
-                  <MdDelete />
-                </span>
-              </div>
+                    <span onClick={() => remove(index)}>
+                      <MdDelete />
+                    </span>
+                  </div>
+                );
+              })}
             </div>
 
-            <button className={styles.newItem}>
+            <button
+              className={styles.newItem}
+              onClick={(e) => {
+                e.preventDefault();
+                append([
+                  {
+                    itemName: '',
+                    itemQuantity: 1,
+                    itemPrice: '',
+                  },
+                ]);
+              }}
+            >
               <span>
                 <FiPlusCircle />
               </span>

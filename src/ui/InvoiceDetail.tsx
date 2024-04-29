@@ -7,11 +7,17 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useGetUser from '../hooks/user/useGetUser';
 import useGetInvoice from '../hooks/invoices/useGetInvoice';
 import MiniSpinner from '../components/MiniSpinner';
-import { InvoiceItems } from '../types/types';
+import { InvoiceItems, PriceItems } from '../types/types';
 import { calculateDue } from '../helpers/calculateInvoiceDue';
 import { formatDate } from '../helpers/formatDate';
 import { useDeleteInvoice } from '../hooks/invoices/useDeleteInvoice';
 import { useUpdateInvoice } from '../hooks/invoices/useUpdateInvoice';
+
+// interface Items {
+//   itemName: string;
+//   itemQuantity: number;
+//   itemPrice: number;
+// }
 
 function InvoiceDetail() {
   const { user } = useGetUser();
@@ -65,6 +71,10 @@ function InvoiceDetail() {
   }
 
   if (isLoading) return <MiniSpinner color='wht' size={40} />;
+
+  const totalInvoicePrice = invoice?.itemList
+    .map((items: PriceItems) => items.itemQuantity * items.itemPrice)
+    .reduce((acc: number, prices: number) => acc + prices, 0);
 
   return (
     <div className={styles.container}>
@@ -146,36 +156,51 @@ function InvoiceDetail() {
             </div>
           </div>
 
-          <div className={styles.prices}>
-            <div className={styles.heading}>
-              <p className={styles.name}>Item name</p>
-              <p className={styles.quantity}>Quantity</p>
-              <p className={styles.price}>Price</p>
-              <p className={styles.total}>Total</p>
-            </div>
-            {/* temporary */}
-            <div className={styles.items}>
-              <p className={styles.name}>Brand Guidelines</p>
-              <p className={styles.quantity}>1</p>
-              <p className={styles.price}>1.800.90$</p>
-              <p className={styles.total}>1.800.90$</p>
-            </div>
+          {invoice.itemList.length > 0 && (
+            <>
+              <div className={styles.prices}>
+                <div className={styles.heading}>
+                  <p className={styles.name}>Item name</p>
+                  <p className={styles.quantity}>Quantity</p>
+                  <p className={styles.price}>Price</p>
+                  <p className={styles.total}>Total</p>
+                </div>
 
-            <div className={styles.items}>
-              <p className={styles.name}>User UI</p>
-              <p className={styles.quantity}>1</p>
-              <p className={styles.price}>2.400.90$</p>
-              <p className={styles.total}>2.400.90$</p>
-            </div>
-            {/* temporary */}
-          </div>
+                {invoice.itemList.map((items: PriceItems) => (
+                  <InvoiceItemsList items={items} key={items.itemName} />
+                ))}
+              </div>
 
-          <div className={styles.totalAmount}>
-            <p>Total amount</p>
-            <p>{convertCurrency(4800.9)}</p>
-          </div>
+              <div className={styles.totalAmount}>
+                <p>Total amount</p>
+                <p>{convertCurrency(totalInvoicePrice)}</p>
+              </div>
+            </>
+          )}
+
+          {!invoice.itemList.length && (
+            <div className={styles.emptyPriceList}>
+              <p className={styles.emptyListText}>
+                No prices are shown on this invoice.
+              </p>
+            </div>
+          )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function InvoiceItemsList({ items }: { items: PriceItems }) {
+  const { itemName, itemQuantity, itemPrice } = items;
+  const total = itemPrice * itemQuantity;
+
+  return (
+    <div className={styles.items}>
+      <p className={styles.name}>{itemName}</p>
+      <p className={styles.quantity}>{itemQuantity}</p>
+      <p className={styles.price}>{convertCurrency(itemPrice)}</p>
+      <p className={styles.total}>{convertCurrency(total)}</p>
     </div>
   );
 }

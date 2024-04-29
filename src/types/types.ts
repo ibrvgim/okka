@@ -42,3 +42,9 @@ export interface InvoiceItems {
   senderStreet?: string;
   draft?: boolean;
 }
+
+export interface PriceItems {
+  itemName: string;
+  itemQuantity: number;
+  itemPrice: number;
+}

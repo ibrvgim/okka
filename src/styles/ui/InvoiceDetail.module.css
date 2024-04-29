@@ -177,3 +177,17 @@
   color: #d1d5db;
   margin-top: -2.5rem;
 }
+
+.emptyPriceList {
+  margin-top: 8rem;
+  background-color: var(--color-grey-800);
+  padding: 4rem;
+  border-radius: 1rem;
+}
+
+.emptyListText {
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
