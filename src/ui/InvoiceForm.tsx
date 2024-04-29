@@ -49,8 +49,6 @@ function InvoiceForm() {
   }
 
   function onSubmit(data: InvoiceItems) {
-    console.log(data);
-
     const status = data.draft ? 'draft' : 'pending';
 
     setInvoices((invoice) => [
@@ -86,7 +84,6 @@ function InvoiceForm() {
                 placeholder='ex. 19 Union Terrace'
                 {...register('senderStreet', {
                   required: 'This field is required',
-
                   minLength: {
                     value: 4,
                     message: 'Minimum 4 characters',
@@ -332,10 +329,10 @@ function InvoiceForm() {
                 <option value='default' className={styles.default}>
                   Select Days
                 </option>
-                <option value={1}>1 day</option>
-                <option value={7}>7 days</option>
-                <option value={14}>14 days</option>
-                <option value={30}>30 days</option>
+                <option value='1'>1 day</option>
+                <option value='7'>7 days</option>
+                <option value='14'>14 days</option>
+                <option value='30'>30 days</option>
               </select>
             </div>
 
@@ -386,7 +383,6 @@ function InvoiceForm() {
                     <input
                       id='quantity'
                       type='text'
-                      defaultValue={1}
                       {...register(`itemList.${index}.itemQuantity`, {
                         required: true,
                         valueAsNumber: true,

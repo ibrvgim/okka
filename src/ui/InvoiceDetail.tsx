@@ -13,12 +13,6 @@ import { formatDate } from '../helpers/formatDate';
 import { useDeleteInvoice } from '../hooks/invoices/useDeleteInvoice';
 import { useUpdateInvoice } from '../hooks/invoices/useUpdateInvoice';
 
-// interface Items {
-//   itemName: string;
-//   itemQuantity: number;
-//   itemPrice: number;
-// }
-
 function InvoiceDetail() {
   const { user } = useGetUser();
   const { isLoading, getInvoice } = useGetInvoice();
@@ -72,9 +66,13 @@ function InvoiceDetail() {
 
   if (isLoading) return <MiniSpinner color='wht' size={40} />;
 
-  const totalInvoicePrice = invoice?.itemList
-    .map((items: PriceItems) => items.itemQuantity * items.itemPrice)
-    .reduce((acc: number, prices: number) => acc + prices, 0);
+  let totalInvoicePrice;
+
+  if (invoice.itemList) {
+    totalInvoicePrice = invoice?.itemList
+      .map((items: PriceItems) => items.itemQuantity * items.itemPrice)
+      .reduce((acc: number, prices: number) => acc + prices, 0);
+  }
 
   return (
     <div className={styles.container}>
@@ -95,7 +93,6 @@ function InvoiceDetail() {
           <StatusIcon status={invoice.status} />
 
           <div>
-            <Button role='edit'>Edit</Button>
             <Button
               role='delete'
               status={isProcessing}
@@ -156,7 +153,7 @@ function InvoiceDetail() {
             </div>
           </div>
 
-          {invoice.itemList.length > 0 && (
+          {invoice?.itemList?.length > 0 && (
             <>
               <div className={styles.prices}>
                 <div className={styles.heading}>
@@ -178,7 +175,7 @@ function InvoiceDetail() {
             </>
           )}
 
-          {!invoice.itemList.length && (
+          {!invoice?.itemList?.length && (
             <div className={styles.emptyPriceList}>
               <p className={styles.emptyListText}>
                 No prices are shown on this invoice.

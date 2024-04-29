@@ -19,7 +19,7 @@ function InvoiceItem({ id, date, clientName, status, term, itemList }: Item) {
   const navigate = useNavigate();
 
   const totalInvoicePrice = itemList
-    .map((item: PriceItems) => item.itemQuantity * item.itemPrice)
+    ?.map((item: PriceItems) => item.itemQuantity * item.itemPrice)
     .reduce((acc, price) => acc + price, 0);
 
   return (
