@@ -15,6 +15,7 @@ Welcome to OKKA! This platform is designed to provide users with the ability to 
 - Vite - https://vitejs.dev/
 - ReactJS - https://react.dev/
 - TypeScript - https://www.typescriptlang.org/
+- TanStack Query - https://tanstack.com/query/latest
 - React Router - https://reactrouter.com/en/main
 - React Context API - https://react.dev/reference/react/createContext
 - React Hook Form - https://react-hook-form.com/
