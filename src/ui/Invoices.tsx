@@ -60,7 +60,10 @@ function Invoices() {
 
   if (isLoading) return <MiniSpinner color='wht' size={40} />;
 
-  if (!userInvoices) return location.reload();
+  if (!userInvoices) {
+    location.reload();
+    return <></>;
+  }
 
   return (
     <div className={styles.container} onClick={() => handleWindows()}>
