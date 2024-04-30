@@ -5,7 +5,6 @@ import { Suspense, lazy } from 'react';
 import FullPageSpinner from './pages/FullPageSpinner';
 import AuthenticationPage from './pages/AuthenticationPage';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Toaster } from 'react-hot-toast';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -20,7 +19,6 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false} />
       <ThemeModeProvider>
         <FormWindowProvider>
           <BrowserRouter>
