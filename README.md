@@ -25,7 +25,7 @@ For the server part SUPABASE was used: https://supabase.com/
 
 ### Website link
 
-[OKKA](https://okka.app/)
+[OKKA](https://okka.vercel.app/)
 
 ### Setup
 
