@@ -64,6 +64,7 @@ function SigninForm() {
                     /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(value) ||
                     'Invalid e-mail address',
                 })}
+                defaultValue='example@gmail.com'
               />
             </div>
           </div>
@@ -92,6 +93,7 @@ function SigninForm() {
                     message: 'At least 8 characters required',
                   },
                 })}
+                defaultValue='example1703'
               />
 
               <span className={styles.eye} onClick={handlePassword}>
