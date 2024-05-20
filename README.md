@@ -5,7 +5,7 @@ Welcome to OKKA! This platform is designed to provide users with the ability to 
 > [!IMPORTANT]
 > The Website does not have responsive design.
 
-> [!WARNING]
+> [!NOTE]
 > To fully experience the possibilities, create your own account without any restrictions.
 > To enter the Demo version, simply go to 'Log In' and click 'Continue'.
 
