@@ -6,7 +6,8 @@ Welcome to OKKA! This platform is designed to provide users with the ability to 
 > The Website does not have responsive design.
 
 > [!WARNING]
-> Some features, such as sending invoices to other users, are disabled to avoid overloading the server.
+> To fully experience the possibilities, create your own account without any restrictions.
+> To enter the Demo version, simply go to 'Log In' and click 'Continue'.
 
 ## OVERVIEW
 
